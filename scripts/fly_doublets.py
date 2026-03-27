@@ -243,4 +243,4 @@ land(master)
 
 print("\n[DONE]")
 print("Find new log:  ls -lt ~/Desktop/GSOC/ardupilot/logs/*.BIN | head -3")
-print("Verify it:     python verify_bin_v2.py <newest>.BIN")
+print("Verify it:     python scripts/verify_bin.py <newest>.BIN")

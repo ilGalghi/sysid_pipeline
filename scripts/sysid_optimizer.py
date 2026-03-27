@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-DEFAULT_CSV = '00000002_verified.csv'
+DEFAULT_CSV = 'data/00000002_verified.csv'
 
 # ── Quad-X mixer (ArduPilot AP_MotorsMatrix convention) ──────────────
 #
@@ -176,7 +176,7 @@ def main():
     axs[0].set_xlim(t_start, t_end)    # zoom to doublet region
 
     fig.tight_layout(rect=[0, 0, 1, 0.95])
-    out = 'sysid_validation_3axis.png'
+    out = 'figures/sysid_validation_3axis.png'
     fig.savefig(out, bbox_inches='tight')
     print(f"\nFigure saved: {out}")
     plt.close()

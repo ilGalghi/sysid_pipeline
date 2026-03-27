@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from pymavlink import mavutil
 
-DEFAULT_BIN = '00000002.BIN'
+DEFAULT_BIN = 'data/00000002.BIN'
 
 
 def extract_log_data(filepath):
@@ -90,6 +90,6 @@ if __name__ == "__main__":
     imu_list, att_list, rcou_list = extract_log_data(binfile)
     df = synchronize(imu_list, att_list, rcou_list)
 
-    out = 'synchronized_flight_data.csv'
+    out = 'data/synchronized_flight_data.csv'
     df.to_csv(out, index=False)
     print(f"Saved {out}  ({len(df)} rows)")

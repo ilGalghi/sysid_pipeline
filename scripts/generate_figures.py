@@ -17,7 +17,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-DEFAULT_CSV = '00000002_verified.csv'
+DEFAULT_CSV = 'data/00000002_verified.csv'
 
 
 def load(path):
@@ -41,7 +41,7 @@ def find_active_region(df, margin_before=5.0, margin_after=15.0):
            min(t_exc.max() + margin_after, df['TimeSec'].max())
 
 
-def figure_overview(df, outfile='flight_data_overview.png'):
+def figure_overview(df, outfile='figures/flight_data_overview.png'):
     """Two-panel figure: gyro rates + motor PWMs, zoomed to doublets."""
 
     t_start, t_end = find_active_region(df)
@@ -91,7 +91,7 @@ def figure_overview(df, outfile='flight_data_overview.png'):
     plt.close()
 
 
-def figure_excitation(df, outfile='excitation_segments.png'):
+def figure_excitation(df, outfile='figures/excitation_segments.png'):
     """Per-axis rolling variance with excited windows highlighted."""
 
     t_start, t_end = find_active_region(df)
